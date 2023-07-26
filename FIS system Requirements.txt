@@ -1,0 +1,12 @@
+FIS system Requirements
+
+Enable mode deflate by uncommenting this line around line 108
+LoadModule deflate_module modules/mod_deflate.so
+ 
+Enable mod expires by uncommenting this line around line 112
+LoadModule expires_module modules/mod_expires.so
+ 
+Enable mod filter by uncommenting this line around line 115
+LoadModule filter_module modules/mod_filter.so
+
+Enable php-pecl-ssh2

@@ -1,0 +1,57 @@
+				<html>
+				<head>
+				  <title>Fire Alert</title>
+				</head>
+				<body>
+				  <p>Our system has detected a fire in '.$row["affected_conservation_area"].'!</p>
+				  <p>Find the details below. </p>
+				  <table width="510" border="1">
+				    <tr>
+				      <th colspan="4" scope="col">Fire Information</th>
+			        </tr>
+				    <tr>
+				      <td width="115">Fire ID</td>
+				      <td width="116">'.$row[fire_id].'</td>
+				      <td width="106">Confidence</td>
+				      <td width="145">'.$row['confidence'].'</td>
+			        </tr>
+				    <tr>
+				      <td>Longitude</td>
+				      <td>'.$row['longitude'].'</td>
+				      <td>Data Caputured Date</td>
+				      <td>'.$row['date'].'</td>
+			        </tr>
+				    <tr>
+				      <td>Latitude</td>
+				      <td>'.$row['latitude'].'</td>
+				      <td>Data Caputured Time (UTC)</td>
+				      <td>'.$row['time'].'</td>
+			        </tr>
+				    <tr>
+				      <td>Kelvin(Brightness) </td>
+				      <td>'.$row['kelvin'].'</td>
+				      <td>&nbsp;</td>
+				      <td>&nbsp;</td>
+			        </tr>
+				    <tr>
+				      <td colspan="4">Affected Conservation Area Details</td>
+			        </tr>
+				    <tr>
+				      <td>Affected Conservation Area</td>
+				      <td colspan="3">'.$row[&quot;affected_conservation_area&quot;].'</td>
+			        </tr>
+				    <tr>
+				      <td>Nearby Conservation Area and Distance (Km)</td>
+				      <td colspan="3">'.$row[&quot;nearby_conservation_area&quot;].'</td>
+			        </tr>
+				    <tr>
+				      <td>Nearby Towns and Distance (Km)</td>
+				      <td colspan="3">'.$row[&quot;nearby_towns&quot;].'</td>
+			        </tr>
+			    </table>
+                <p></p>
+                <p>Kind Regards,</p>
+                <p>RCMRD Fire Information System</p>
+                <p>Regional Center for Mapping and Resources for Development</p>     
+				</body>
+				</html>

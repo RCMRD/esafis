@@ -1,0 +1,11 @@
+1. Load all parks as layer
+2. highlight fire accected parks with red
+3. Add place of interest in search for single, custom, and range search with graph
+4. Show location of towns map
+5. Show fire fighter positions in map with their details, contact details, distance from fire
+6. Show charts, fire occurrence by park by time selected.
+7. On marker query show
+   a. Affected pack, forest, etc (should have common names), their names, 
+   b. Nearby parks, forest, etc (should have common names), their names, distance from fire point, etc. 
+   c. Nearby town - town name (distance in Km) - for towns within a buffer of 20Kms
+   d. The nearest fire fighter post - name(s), Details as stated on point 5

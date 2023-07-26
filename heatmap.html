@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Heatmap -->
+<script type="text/javascript" src="assets/js/heatmap.js" defer></script>
+<script type="text/javascript">
+window.onload = function(){
+ 
+    // heatmap configuration
+    var config = {
+        element: document.getElementById("heatmapArea"),
+        radius: 30,
+        opacity: 50,
+        legend: {
+            position: 'br',
+            title: 'Example Distribution'
+        }   
+    };
+    
+    //creates and initializes the heatmap
+    var heatmap = h337.create(config);
+ 
+    // let's get some data
+    var data = {
+        max: 20,
+        data: [
+            { x: 10, y: 20, count: 18 },
+            { x: 25, y: 25, count: 14 },
+            { x: 50, y: 30, count: 20 }
+            // ...
+        ]
+    };
+ 
+    heatmap.store.setDataSet(data);
+};
+</script>
+<div id="heatmapArea"></div>
+</html>

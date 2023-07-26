@@ -1,0 +1,9 @@
+1. On the popup add, 
+- date and time taken
+- location lat, lon
+- nearby location, city, town
+Add logos. 
+2. Legend images and rows are partly hidden
+3. Expand base layer on single click
+4. On hover, markers turn to extreme.png 
+5. Add date on the markers popup

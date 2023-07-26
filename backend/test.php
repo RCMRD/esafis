@@ -1,0 +1,36 @@
+<?php
+$create_upload_datetime = date_create();
+$timestamp_upload_datetime= date_timestamp_get($create_upload_datetime);
+$upload_datetime = date('Y-m-d H:i:s', $timestamp_upload_datetime);
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+echo "<br>upload_datetime". $upload_datetime;
+?>

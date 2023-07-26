@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fire Information System</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="text/javascript" src="lib/extjs_4.2.1/extjs.js"></script>
+
+
+</head>
+<body>
+<div id="timer"><div class="updatemessage"></div> <div id="updatecounter"></div></div>
+<script type="text/javascript">
+	
+
+
+	function fun () {
+		function twoDigits(n) {
+			return (n <= 9 ? "0" + n : n);
+		}
+		var delta = 1000;
+		var lastDate = new Date().getDate();
+		var counterElement = 'updatecounter';
+		var triggers = [
+		{'Hours':9,'Minutes':29,'Seconds':9,'triggered':false},
+		{'Hours':23,'Minutes':57,'Seconds':15,'triggered':false}
+		];
+		var nextTrigger = 0;
+		function cb(i) {
+			console.log("Data Updated!"); 
+		}
+		function countDown() {
+			if (nextTrigger == -1) return;
+			var c = triggerTime(new Date(), nextTrigger, true);
+			document.getElementById(counterElement).innerHTML ='The data will be updated in '+ c['Hours']+' Hours, '+twoDigits(c['Minutes'])+' Minutes and '+twoDigits(c['Seconds'])+' Seconds';
+			setTimeout(countDown,1);
+		}
+		function at() {
+			var now = new Date();
+			for (var i = 0, n = triggers.length; i < n; i++) {
+				d = triggerTime(now,i,false);
+				if (Math.abs(d) <= delta && !triggers[i]['triggered']) {
+					if (d < 0) {
+						setTimeout(function() { cb(i); }, Math.abs(d));
+					} else {
+						cb(i);
+					}
+					triggers[i]['triggered'] = true;
+					nextTrigger = (i + 1) % triggers.length;
+					break;				
+				}
+			}
+			setTimeout(at,delta+1000);
+			resetTriggers();
+			
+		}
+		function triggerTime(d,i,isCalc) {
+			var t = new Date(d);
+			for (var p in triggers[i]) {
+				if (p == 'triggered') continue;
+				t['set'+p](triggers[i][p]);
+			}
+			var r = t - d;
+			if (!isCalc) return r;
+			r = r / 1000;
+			var h = 60 * 60, m = 60, s = 1; 
+			var res = {'Hours':0,'Minutes':0,'Seconds':0,'Time':r};
+			res['Hours'] = Math.floor(Math.abs(r) / h);
+			res['Minutes'] = Math.floor((Math.abs(r) - Math.abs(res['Hours']) * h) / m);
+			res['Seconds'] = Math.floor(Math.abs(r) - Math.abs(res['Hours'] * h) - Math.abs(res['Minutes']) * m);
+			if (r < 0) {
+				res['Hours'] = 24 - (res['Hours'] + 1);
+				res['Minutes'] = 60 - (res['Minutes'] + 1);
+				res['Seconds'] = 60 - (res['Seconds'] + 1);
+			}
+			return res;
+		}
+		function resetTriggers() {
+			var now = new Date().getDate();
+			if (now == lastDate) return;
+			for (var i = 0, n = triggers.length; i < n; i++) {
+				triggers[i]['triggered'] = false;
+			}
+			lastDate = now;
+		}
+		at();
+		//document.addEventListener("DOMContentLoaded", function(event) { 
+			countDown();
+		//});
+
+}
+fun ();
+
+</script>
+</body>
+</html>
